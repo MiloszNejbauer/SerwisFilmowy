@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: films
+
+
+  data:
+    mongodb:
+      uri: mongodb+srv://milosznejbauer:bolo123@bazafilmow.qjngfsb.mongodb.net/BazaFilmow
