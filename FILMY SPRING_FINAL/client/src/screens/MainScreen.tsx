@@ -21,7 +21,6 @@ const MainScreen: React.FC = () => {
                 throw new Error('Failed to fetch movies');
             }
             const data = await response.json();
-            // Zaokrąglanie totalRating do jednego miejsca po przecinku
             data.forEach((movie: Movie) => {
                 if (movie.totalRating) {
                     movie.totalRating = parseFloat(movie.totalRating.toFixed(1));
@@ -48,7 +47,6 @@ const MainScreen: React.FC = () => {
     };
 
     const handleSearchSubmit = () => {
-        // Filtrujemy filmy na podstawie wprowadzonego searchTerm
         const filteredMovies = movies.filter(movie =>
             movie.title.toLowerCase().includes(searchTerm.toLowerCase())
         );
@@ -56,7 +54,6 @@ const MainScreen: React.FC = () => {
     };
 
     const handleClearSearch = () => {
-        // Usuwamy searchTerm i przywracamy pełną listę filmów
         setSearchTerm('');
         fetchMovies();
     };
